@@ -1,8 +1,11 @@
 from django.db import models
 
 # Create your models here.
+from django.test import Client
+
+
 class Tinting(models.Model):
-    client = models.ForeignKey('Client', on_delete=models.CASCADE)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
     gov_id = models.CharField(max_length=10, primary_key=True)
     invoice = models.CharField(max_length=10)
     plate_number = models.CharField(max_length=10)
